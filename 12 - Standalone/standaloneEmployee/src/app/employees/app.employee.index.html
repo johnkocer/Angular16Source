@@ -1,0 +1,30 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <h2>Employee Records</h2>
+        <div style="position: relative; width: fit-content; float: right;" class="text-right">
+            <a class="btn btn-primary" href="/employee-add" role="button">Add Employee</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th scope="col">No</th>
+                        <th scope="col">Employee Name</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let employee of employeeList'>
+                        <td>{{employee.id}}</td>
+                        <td>{{employee.name}}</td>
+                        <td>
+                            <button type="button" class="btn btn-info"
+                                (click)="navigateUrl('/employee-view', employee.id)">Detail</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
